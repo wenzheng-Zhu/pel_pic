@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nvr_user: MyString
+  password: MyString
+  nvr_ip: MyString
+  nvr_port: MyString
+
+two:
+  name: MyString
+  nvr_user: MyString
+  password: MyString
+  nvr_ip: MyString
+  nvr_port: MyString

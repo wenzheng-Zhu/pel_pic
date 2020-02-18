@@ -1,0 +1,34 @@
+
+  <%= render 'layouts/clientmanage' %>
+  <%= render 'layouts/createclient' %>
+  <table class="table table-hover table-auto">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>ip</th>
+          <th>Proface</th>
+          <th>IPC</th>
+          <th>分组</th>
+          <th width="7%" class="text-center">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<% @panels.each do |p| %>
+      	<tr>
+      	  <td><%= p.name %></td>
+      	  <td><%= p.ip %></td>
+          <td><%= p.proface&.name %></td>
+          <td>
+            <% p.ipcs.each do |ipc| %>
+              <%= ipc.name %>
+            <%end %>   
+          </td>
+          <td><%= p.group.name %></td>
+          <td>
+            <%= link_to "编辑", edit_panel_path(p) %>
+            <%= link_to "删除", panel_path(p), method: :delete, data: { confirm: "Are you sure?"} %>
+          </td>
+      	</tr>
+      	<% end %>
+      </tbody>
+  </table>

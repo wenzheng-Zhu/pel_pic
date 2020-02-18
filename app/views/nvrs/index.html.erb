@@ -1,0 +1,29 @@
+  <%= render 'layouts/nvrmanage' %>
+  <%= render 'layouts/createnvr' %>
+  <table class="table table-hover table-auto">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>用户名</th>
+          <th>密码</th>
+          <th>IP</th>
+          <th>端口</th>
+          <th width="7%" class="text-center">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<% @nvrs&.each do |nvr| %>
+      	<tr>
+      	  <td><%= nvr.name %></td>
+      	  <td><%= nvr.nvr_user %></td>
+      	  <td><%= nvr.password %></td>
+      	  <td><%= nvr.nvr_ip %></td>
+      	  <td><%= nvr.nvr_port %></td>
+      	  <td>
+            <%= link_to "编辑", edit_nvr_path(nvr) %>
+            <%= link_to "删除", nvr_path(nvr), method: :delete, data: { confirm: "Are you sure?"} %>
+          </td>
+      	</tr>
+      	<% end %>
+      </tbody>
+  </table>

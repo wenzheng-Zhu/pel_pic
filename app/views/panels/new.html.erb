@@ -1,0 +1,19 @@
+<%= form_for @panel do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :ip %>
+  <%= f.text_field :ip %>
+
+  <%= f.label "所属组" %>
+  <%= f.collection_select(:group_id, Group.all, :id, :name) %>
+
+  <%= f.label "关联Proface" %>
+  <%= f.collection_select(:proface_id, Proface.all, :id, :name) %>
+
+ 
+
+  <%= f.submit "保存" %>
+
+<% end %>

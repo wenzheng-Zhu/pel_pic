@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device_description: MyString
+  suv_amount: 1
+  suv_available: 1
+  car_amount: 1
+  car_available: 1
+  carboard_description: MyString
+  platenumber: MyString
+
+two:
+  device_description: MyString
+  suv_amount: 1
+  suv_available: 1
+  car_amount: 1
+  car_available: 1
+  carboard_description: MyString
+  platenumber: MyString

@@ -1,0 +1,39 @@
+<%= render 'layouts/contentmanage' %>
+<%#= render 'layouts/sidebar' %>
+ 
+  <table class="table table-hover table-auto">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>所属节目</th>
+          <th>类型</th>
+          <th>播放时长</th>
+          <th>内容</th>
+          <th width="7%" class="text-center">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<% @pragrams&.each do |pg| %>
+      	<tr>
+      	  <td><%= pg.name %></td>
+          <td><%= pg.item.name %></td>
+          <td><%= pg.type %></td>
+          <td><%= pg.duration %></td>
+         <!--  <td><%= link_to "下载此节目内容", pg.attachment_url.to_s %></td> -->
+          <td>
+
+            <% if pg.type == "Word" %>
+              <%= pg.content %>
+             <% else %>
+              <%= image_tag(pg.attachment_url(:thumb).to_s) %>
+            <% end %>
+            </td>
+      	 
+      	  <td>
+            <%= link_to "编辑", edit_pragram_path(pg) %>
+            <%= link_to "删除", pragram_path(pg), method: :delete, data: { confirm: "Are you sure?"} %>
+          </td>
+      	</tr>
+      	<% end %>
+      </tbody>
+  </table>

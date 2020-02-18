@@ -1,0 +1,20 @@
+<%= form_for @ipc do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :path_no %>
+  <%= f.text_field :path_no %>
+
+  <%= f.label :canshu %>
+  <%= f.text_field :canshu %>
+
+  <%= f.label "所属NVR" %>
+  <%= f.collection_select(:nvr_id, Nvr.all, :id, :name) %>
+
+  <%= f.label "所属Panel" %>
+  <%= f.collection_select(:panel_id, Panel.all, :id, :name) %>
+  
+  <%= f.submit "保存" %>
+
+<% end %>

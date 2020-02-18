@@ -1,0 +1,15 @@
+<%= form_for @proface do |f| %>
+
+  <%= f.label "名称" %>
+  <%= f.text_field :name %>
+
+  <%= f.label "IP" %>
+  <%= f.text_field :pro_ip %>
+
+ <%= f.label "端口" %>
+  <%= f.text_field :pro_port %>
+
+
+  <%= f.submit "保存" %>
+
+<% end %>

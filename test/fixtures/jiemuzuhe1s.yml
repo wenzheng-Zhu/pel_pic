@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  video1: MyString
+  video2: MyString
+  desc: MyString
+  command_type: 1
+
+two:
+  video1: MyString
+  video2: MyString
+  desc: MyString
+  command_type: 1

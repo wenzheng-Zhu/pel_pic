@@ -1,0 +1,13 @@
+<%= form_for @item do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label "所属panel" %>
+  <%= f.collection_select(:panel_id, Panel.all, :id, :name) %>
+
+  
+
+  <%= f.submit "保存" %>
+
+<% end %>

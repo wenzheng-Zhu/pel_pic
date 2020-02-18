@@ -1,0 +1,29 @@
+  <%= render 'layouts/nvrmanage' %>
+  <%= render 'layouts/createipc' %>
+  <table class="table table-hover table-auto">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>通道号</th>
+          <th>参数</th>
+          <th>NVR</th>
+          <th width="7%" class="text-center">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<% @ipcs.each do |i| %>
+      	<tr>
+      	  <td><%= i.name %></td>
+          <td><%= i.path_no %></td>
+          <td><%= i.canshu %></td>
+          <td><%= i.nvr.name %></td>
+            <td>
+            <%= link_to "编辑", edit_ipc_path(i) %>
+            <%= link_to "删除", ipc_path(i), method: :delete, data: { confirm: "Are you sure?"} %>
+          </td>
+      	</tr>
+
+       
+      	<% end %>
+      </tbody>
+  </table>

@@ -1,0 +1,18 @@
+<%= form_for @video do |f| %>
+  <%= f.label "名称" %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label "播放时长" %>
+  <%= f.text_field :duration %>
+
+  <%= f.label "类型" %>
+  <%= f.text_field :type %>
+
+  <%= f.label "上传视频" %>
+  <%= f.file_field :attachment %>
+
+  <%= f.label "所属节目" %>
+  <%= f.collection_select(:item_id, Item.all, :id, :name) %>
+
+  <%= f.submit "保存" %>
+<% end %>

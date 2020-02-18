@@ -1,0 +1,2 @@
+class Parkingstate < ApplicationRecord
+end

@@ -1,0 +1,23 @@
+<%= form_for @word do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label "播放时长" %>
+  <%= f.text_field :duration %>
+
+  <%= f.label "类型" %>
+  <%= f.text_field :type %>
+
+  <%#= f.label :attachment %>
+  <%#= f.file_field :attachment %>
+
+  <%= f.label "文本内容" %>
+  <%= f.text_field :content %>
+
+
+
+  <%= f.label "所属节目" %>
+  <%= f.collection_select(:item_id, Item.all, :id, :name) %>
+
+  <%= f.submit "保存" %>
+<% end %>

@@ -1,0 +1,28 @@
+<%= render 'layouts/contentmanage' %>
+<%#= render 'layouts/sidebar' %>
+ 
+  <table class="table table-hover table-auto">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>所属节目</th>
+          <th>类型</th>
+          <th>播放时长</th>
+          <th width="7%" class="text-center">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<% @items&.each do |item| %>
+      	<tr>
+      	  <td><%= item.name %></td>
+          <td><%= item.panel.name %></td>
+          <td><%= item.panel.group.name %></td>
+      	 
+      	  <td>
+            <%= link_to "编辑", edit_item_path(item) %>
+            <%= link_to "删除", item_path(item), method: :delete, data: { confirm: "Are you sure?"} %>
+          </td>
+      	</tr>
+      	<% end %>
+      </tbody>
+  </table>

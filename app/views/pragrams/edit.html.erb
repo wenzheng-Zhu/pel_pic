@@ -1,0 +1,44 @@
+
+<% if @pragram.type == "Word" %>
+
+  <%= form_for @pragram do |f| %>
+  <%= f.label "名称" %>
+  <%= f.text_field :name %>
+
+  <%= f.label "播放时长" %>
+  <%= f.text_field :duration %>
+
+  <%= f.label "类型" %>
+  <%= f.text_field :type %>
+
+  <%= f.label "文本内容" %>
+  <%= f.text_field :content %>
+
+  <%= f.label "所属节目" %>
+  <%= f.collection_select(:item_id, Item.all, :id, :name) %>
+
+  <%= f.submit "Save Changes" %>
+
+  <% end %>
+
+  <% else %>
+  <%= form_for @pragram do |f| %>
+  <%= f.label "名称" %>
+  <%= f.text_field :name %>
+
+  <%= f.label "播放时长" %>
+  <%= f.text_field :duration %>
+
+  <%= f.label "类型" %>
+  <%= f.text_field :type %><br>
+
+  <%= f.label "上传图片/视频" %>
+  <%= f.file_field :attachment %>
+
+
+  <%= f.label "所属节目" %>
+  <%= f.collection_select(:item_id, Item.all, :id, :name) %>
+
+  <%= f.submit "Save Changes" %>
+  <% end %>
+  <% end %>
