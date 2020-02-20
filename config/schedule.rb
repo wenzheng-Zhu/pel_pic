@@ -24,7 +24,17 @@
 #set :output, 'log/cron.log'
 set :environment, :development
 #every 1.hour  do
-every 30.minutes do 
-	rake 'get_modbus'
+# every 30.minutes do 
+# 	rake 'get_modbus'
 
+# end
+
+
+every 10.minutes do
+	rake 'screen_shot'
+end
+
+
+every 8.days do
+	rake 'check_pic_time'
 end
