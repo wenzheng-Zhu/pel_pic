@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+需求：
+0 管理 cctv 监控ip 和用户名密码
+1 连接DS 硬盘录像机获取视频流:  
+2 设置截图频率: N秒间隔
+3 设置图片保存时间 M天
+4 设置ftp 服务器, 上传打包图片
+
+需求2的实现，每10分钟调用rtsp截屏，代码在lib/tasks/screen_shot.rake
+需求3的实现，每8天检查图片是否过期，代码在lib/tasks/check_pic_time.rake
+需求4的实现，每周日下午12点对截图进行压缩.zip，上传ftp服务器，代码在lib/tasks/zip_ftp_upload_delete.rake, 上传ftp的脚本是 public/upload_to_ftp.sh
