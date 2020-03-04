@@ -1,0 +1,50 @@
+<% obj.each do |pelco| %>
+
+<div class="row">
+
+<div class="col-xs-8 col-xs-offset-2">
+
+<div class="well well-lg">
+
+<div class="article-title">
+
+<%= link_to pelco.camera_name, pelco_path(pelco) %>
+
+</div>
+
+<div class="article-body">
+
+<div class="article-meta-details">
+
+<small>Created at: 
+
+<%= time_ago_in_words(pelco.created_at) %> ago,
+
+last updated: <%= time_ago_in_words(pelco.updated_at) %> ago</small>
+
+</div>
+
+</div>
+
+
+
+	<div class="article-actions">
+
+		<%= link_to "Edit this pelco", edit_pelco_path(pelco), class: "btn btn-xs btn-primary" %>
+
+		<%= link_to "Delete this pelco", pelco_path(pelco), method: :delete,
+
+		data: { confirm: "Are you sure you want to delete the pelco?"},
+
+	class: "btn btn-xs btn-danger" %>
+
+	</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+<% end %>

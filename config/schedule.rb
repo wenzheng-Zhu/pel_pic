@@ -38,3 +38,8 @@ end
 every 8.days do
 	rake 'check_pic_time'
 end
+
+
+every :sunday, at: '12pm' do # Use any day of the week or :weekend, :weekday
+    rake  'zip_ftp_upload_delete'
+end

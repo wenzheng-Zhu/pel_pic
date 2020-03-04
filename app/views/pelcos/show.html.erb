@@ -1,0 +1,26 @@
+<h2 align="center"><%= @pelco.camera_name %></h2>
+
+<div class="well col-xs-8 col-xs-offset-2">
+
+
+
+<h4 class="center description"><strong>Description:</strong></h4>
+
+<hr>
+
+<%= simple_format(@pelco.ip) %>
+
+<div class="article-actions">
+
+
+		<%= link_to "Edit this pelco", edit_pelco_path(@pelco), class: "btn btn-xs btn-primary" %>
+
+		<%= link_to "Delete this pelco", pelco_path(@pelco), method: :delete,data: { confirm: "Are you sure you want to delete the pelco?"},class: "btn btn-xs btn-danger" %>
+    
+
+		<%= link_to "View all pelcos", pelcos_path, class: "btn btn-xs btn-success" %>
+
+</div>
+
+
+</div>

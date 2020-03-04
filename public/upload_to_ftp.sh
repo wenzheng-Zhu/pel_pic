@@ -8,7 +8,7 @@ ftp -v -n 10.40.242.200 <<EOF               #ftp服务器的ip地址,登入ftp�
 user username password                      
 binary
 hash
-cd /awsm/###
+cd /awsm/###   
 lcd /Users/rippletech/workspace/pel_pic/public/pic_zip/
 prompt
 mput *
