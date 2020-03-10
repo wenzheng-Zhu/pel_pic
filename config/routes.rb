@@ -19,6 +19,7 @@ Rails.application.routes.draw do
    get '/signup', to: 'users#new'
    get '/login', to: 'sessions#new'
    delete '/logout', to: 'sessions#destroy'
+   post '/login', to: 'sessions#create'
 
    resources :pelcos
    resources :users

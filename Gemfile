@@ -33,7 +33,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'bootstrap-sass', '~> 3.3.7'
+#gem 'bootstrap-sass', '~> 3.3.7'
+
+gem 'bootstrap-sass', '~> 3.4.1'
+#gem 'jquery-rails'
 
 gem 'jquery-rails'
 # Use ActiveStorage variant
@@ -48,6 +51,7 @@ gem 'modbus-cli'
 gem 'whenever', :require => false
 gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

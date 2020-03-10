@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ftp_address: MyString
+  ftp_username: MyString
+  ftp_password: MyString
+  upload_pic_ftp_address: MyString
+  local_zip_address: MyString
+
+two:
+  ftp_address: MyString
+  ftp_username: MyString
+  ftp_password: MyString
+  upload_pic_ftp_address: MyString
+  local_zip_address: MyString

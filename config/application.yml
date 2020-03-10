@@ -1,0 +1,40 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+
+production:
+
+  screen_shot_time: "10"                       #设置截屏的频率， 单位：分钟 
+  check_pic_time: "8"                          #设置查看所截图片是否过期的查看频率，单位： 天
+  zip_ftp_upload_delete_date: "sunday"         #设置压缩图片的频率，单位; 周几， eg: 每周日
+  pic_outdate_time: "7"                        #设置所截取图片所保存天数，单位： 天   eg: 保存7天，7天后图片过期将被自动删除
+  pic_store_path: "/Users/rippletech/workspace/pel_pic/public/screen_shot"   #设置所截图片保存的文件夹和路径
+  project_path: "/var/www/pel_pic"
+  ftp_address: "127.0.0.1"           #设置ftp服务器地址
+  ftp_user_name: "foobar"            #设置登入ftp的用户名
+  ftp_password: "foobar"             #设置ftp登入密码
+  upload_pic_ftp_address: "/awsm/####"  #设置上传ftp的打包.zip文件在ftp服务器所存储的路径
+
+
+
+development:
+
+  screen_shot_time: "10"                       #设置截屏的频率， 单位：分钟 
+  check_pic_time: "8"                          #设置查看所截图片是否过期的查看频率，单位： 天
+  zip_ftp_upload_delete_date: "sunday"         #设置压缩图片的频率，单位; 周几， eg: 每周日     注意：设定的时候首字母小写
+  pic_outdate_time: "7"                        #设置所截取图片所保存天数，单位： 天   eg: 保存7天，7天后图片过期将被自动删除
+  pic_store_path: "/Users/rippletech/workspace/pel_pic/public/screen_shot"   #设置所截图片保存的文件夹和路径
+  project_path: "/var/www/pel_pic"
+  ftp_address: "127.0.0.1"           #设置ftp服务器地址
+  ftp_user_name: "foobar"            #设置登入ftp的用户名
+  ftp_password: "foobar"             #设置ftp登入密码
+  upload_pic_ftp_address: "/awsm/####"  #设置上传ftp的打包.zip文件在ftp服务器所存储的路径

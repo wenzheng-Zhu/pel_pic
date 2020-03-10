@@ -29,17 +29,21 @@ set :environment, :development
 
 # end
 
+every :reboot do
+  rake 'after_reboot'
+end
 
-every 10.minutes do
+
+every ENV['screen_shot_time'].to_i.minutes do
 	rake 'screen_shot'
 end
 
 
-every 8.days do
+every ENV['check_pic_time'].to_i.days do
 	rake 'check_pic_time'
 end
 
 
-every :sunday, at: '12pm' do # Use any day of the week or :weekend, :weekday
+every ENV['zip_ftp_upload_delete_date'].to_sym, at: '12pm' do           # Use any day of the week or :weekend, :weekday
     rake  'zip_ftp_upload_delete'
 end

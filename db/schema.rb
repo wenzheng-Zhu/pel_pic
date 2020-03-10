@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_092228) do
+ActiveRecord::Schema.define(version: 2020_03_10_133409) do
 
   create_table "cameras", force: :cascade do |t|
     t.string "ip_adress"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2020_03_04_092228) do
     t.datetime "updated_at", null: false
     t.integer "parking_lot_no"
     t.integer "serial_no"
+  end
+
+  create_table "ftprecords", force: :cascade do |t|
+    t.string "ftp_address"
+    t.string "ftp_username"
+    t.string "ftp_password"
+    t.string "upload_pic_ftp_address"
+    t.string "local_zip_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -119,6 +129,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_092228) do
     t.string "camera_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "rtsp"
   end
 
   create_table "pics", force: :cascade do |t|

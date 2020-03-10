@@ -33,3 +33,6 @@ Things you may want to cover:
 需求2的实现，每10分钟调用rtsp截屏，代码在lib/tasks/screen_shot.rake
 需求3的实现，每8天检查图片是否过期，代码在lib/tasks/check_pic_time.rake
 需求4的实现，每周日下午12点对截图进行压缩.zip，上传ftp服务器，代码在lib/tasks/zip_ftp_upload_delete.rake, 上传ftp的脚本是 public/upload_to_ftp.sh
+
+
+在config/application.yml中设置相关，然后重启项目

@@ -1,9 +1,9 @@
 task :zip_ftp_upload_delete => :environment do
 
 
-    command1 = "cd && zip -r /Users/rippletech/workspace/pel_pic/public/pic_zip/pic_#{Time.now}.zip /Users/rippletech/workspace/pel_pic/public/screen_shot"
-	command2 = "cd /Users/rippletech/workspace/pel_pic/public && upload_to_ftp.sh"
-	command3 = "cd /Users/rippletech/workspace/pel_pic/public/pic_zip && rm -rf *.zip"
+    command1 = "cd && zip -r #{ENV['pic_store_path']}/pic_#{Time.now}.zip  #{ENV['pic_store_path']}"
+	command2 = "cd #{ENV['project_path']}/public && upload_to_ftp.sh"
+	command3 = "cd  #{ENV['pic_store_path']} && rm -rf *.zip"
 
 
     
