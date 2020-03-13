@@ -1,5 +1,7 @@
 task :after_reboot => :environment do
 
+
+
 	@ftp_record = Ftprecord.last
 	@ftp_record ||= Ftprecord.create(ftp_address: "ftp_address", ftp_username: "ftp_username", ftp_password: "ftp_password", upload_pic_ftp_address: "upload_pic_ftp_address", local_zip_address: "local_zip_address")
 
@@ -46,6 +48,13 @@ task :after_reboot => :environment do
 
 
     @ftp_record.update(ftp_address: rp11, ftp_username: rp22, ftp_password: rp33, upload_pic_ftp_address: rp44, local_zip_address: rp55)
+
+
+    #创建每个pelco摄像头所存储截屏的文件
+    Pelco.all.each do |pel|
+        command = "cd #{ENV['pic_store_path']} && mkdir #{pel.name}_screen_shot"
+        system(command)
+    end
 
 
 

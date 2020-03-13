@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://gems.ruby-china.com/
   specs:
     actioncable (5.2.0)
       actionpack (= 5.2.0)
@@ -106,6 +106,7 @@ GEM
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     gserver (0.0.1)
+    hirb (0.7.3)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -255,6 +256,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   figaro
+  hirb
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
@@ -276,7 +278,7 @@ DEPENDENCIES
   whenever
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.4.4p296
 
 BUNDLED WITH
-   1.17.1
+   1.17.3
