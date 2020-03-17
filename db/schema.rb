@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_133409) do
+ActiveRecord::Schema.define(version: 2020_03_17_131556) do
 
   create_table "cameras", force: :cascade do |t|
     t.string "ip_adress"
@@ -130,6 +130,8 @@ ActiveRecord::Schema.define(version: 2020_03_10_133409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "rtsp"
+    t.string "name"
+    t.string "password"
   end
 
   create_table "pics", force: :cascade do |t|

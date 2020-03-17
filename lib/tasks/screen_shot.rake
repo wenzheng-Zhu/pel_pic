@@ -1,5 +1,6 @@
 task :screen_shot => :environment do
 
+	require 'net/http'
 	require 'thread'
 
 	mutex = Mutex.new
@@ -7,14 +8,30 @@ task :screen_shot => :environment do
     Pelco.all.each do |pel|
      	thr = Thread.new do
      		mutex.synchronize do
-	     		t = Time.now.to_s.delete("-").delete(" ").delete(":").split("+")[0]
-			    command = "ffmpeg -y -i rtsp://#{pel.ip}/stream1 -ss 00:00:01 -vframes 1 -f image2 -vcodec png #{ENV['pic_store_path']}/#{pel.name}_screen_shot/image_#{pel.camera_name}_#{t}.png"         #pelco获取rtsp流，rtsp://IP地址/stream1
-			    system(command)
-			    sleep 1
+     			uri = URI("http://#{pel.ip}/api/jpeg")
+     			Net::HTTP.start(uri.host, uri.port) do |http|
+     				request = Net::HTTP::Get.new(uri)
+     				request.basic_auth pel.name, pel.password
+     				http.request request do |response|
+     					t = Time.now.to_s.delete("-").delete(" ").delete(":").split("+")[0]
+     					open "#{ENV['pic_store_path']}/#{pel.name}_screen_shot/image_#{pel.name}_#{t}.png", 'w' do |io|
+     						response.read_body do |chunk|
+     							io.write chunk
+     						end
+     					end
+     				end
+
+     			end
+	     		
      		end
      	end
-     	thr.join    
+     	thr.join 
+     	sleep 1  
 	end
 	
 	
 end
+
+
+
+			    
